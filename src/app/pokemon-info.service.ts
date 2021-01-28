@@ -12,10 +12,10 @@ export class PokemonInfoService {
   constructor(private http:HttpClient) {
     
    }
-   public async getPokemon(Number id){
+   public async getPokemon(id:String){
     //Busca la lista de clientes en el webservice conectado a couchDB
     //Devuelve un JSON con multiples elementos.
-    let list = await this.http.get<Pokemon>(this.urlpokemon+id+"/");
+    let list =  this.http.get<Pokemon>(this.urlpokemon+id+"/");
     return list;
   }
 
